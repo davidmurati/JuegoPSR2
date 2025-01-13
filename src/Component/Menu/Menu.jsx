@@ -22,7 +22,10 @@ function menu() {
       </div>
 
       <button className="boton1" onClick={() => window.location.href = "/Juego1"}>
-        Juego Alternativas y pistas
+        Juego Alternativas 
+        </button>
+        <button className="boton1" onClick={() => window.location.href = "/Juego4"}>
+        Juego Desiciones 
         </button>
 
         

@@ -12,7 +12,7 @@ import imagen11 from '../ImagenJuego/EstudianteTriste.jpeg';
 import "./Juego4.css"; 
 import Navbar from '../Navbar/Navbar';
 
-const StudentSurvivalGame = () => {
+const StudentSurvival = () => {
   // Estado del jugador
   const [health, setHealth] = useState(7);
   const [energy, setEnergy] = useState(7);
@@ -796,4 +796,4 @@ const handleNextDay = () => {
     </div>
   );
 };
-  export default StudentSurvivalGame;
+  export default StudentSurvival;

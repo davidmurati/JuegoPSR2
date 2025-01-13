@@ -795,5 +795,5 @@ const handleNextDay = () => {
       )}
     </div>
   );
-}
+};
   export default StudentSurvivalGame;

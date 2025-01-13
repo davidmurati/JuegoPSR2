@@ -7,6 +7,7 @@ import Juego1 from "./Component/Juego1/Juego1";
 import Juego2 from "./Component/Juego1/Juego2";
 import Juego3 from "./Component/Juego1/Juego3";
 import Juego4 from "./Component/Juego4/Juego4";
+import Juego5 from "./Component/Juego5/Juego5";
 
 function App() {
 
@@ -32,6 +33,9 @@ function App() {
         </Route>
         <Route exact path="/Juego4">
           <Juego4 />
+        </Route>
+        <Route exact path="/Juego5">
+          <Juego5 />
         </Route>
      </Switch>
      </Router>

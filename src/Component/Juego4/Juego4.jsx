@@ -704,9 +704,9 @@ const StudentSurvivalGame = () => {
   ];
 
   // Función para manejar el paso del día
-  const handleNextDay = () => {
+const handleNextDay = () => {
     if (gameOver) return;
-
+  
     // Verificar si el jugador perdió
     if (health <= 0 || energy <= 0 || moral <= 0 || money <= 0 || knowledge <= 0) {
       setGameOver(true);
@@ -714,30 +714,37 @@ const StudentSurvivalGame = () => {
       setCurrentImage(imagen11); // Estudiante triste
       return;
     }
-
+  
     // Verificar si el jugador ganó
     if (week > 4) {
       setGameOver(true);
-      setMessage("¡Felicidades! Sobreviviste las 4 semanas como estudiante.");
+      setMessage("¡Felicidades! 🎉 Sobreviviste las 4 semanas como estudiante. ¡Eres increíble! 💪");
       setCurrentImage(imagen2); // Estudiante atento
       return;
     }
-
+  
     // Verificar si es el último día de la semana (día 7)
     if (day === 7) {
       const event = weeklyEvents[Math.floor(Math.random() * weeklyEvents.length)];
       event.effect();
       setWeek(week + 1);
       setDay(1);
+  
+      // Mensaje de ánimo al completar una semana
+      if (week < 4) {
+        setMessage(`¡Has completado la semana ${week}! 🎉 ¡Sigue así, vas por buen camino! 💪`);
+      } else {
+        setMessage("¡Última semana completada! 🎉 ¡Estás a punto de ganar! 💪");
+      }
       return;
     }
-
+  
     // Seleccionar un evento aleatorio
     const eventType = Math.random();
     if (eventType < 0.25) {
       const event = positiveEvents[Math.floor(Math.random() * positiveEvents.length)];
       event.effect();
-    } else if (eventType < 0.5) {
+    } else if (eventType < 0.4) {
       const event = negativeEvents[Math.floor(Math.random() * negativeEvents.length)];
       event.effect();
     } else {
@@ -747,11 +754,11 @@ const StudentSurvivalGame = () => {
       setCurrentImage(imagen10); // Estudiante pensativo
       return;
     }
-
+  
     // Pasar al siguiente día
     setDay(day + 1);
   };
-
+  
   return (
     <div className="game-container">
       <header className="header">
@@ -769,7 +776,7 @@ const StudentSurvivalGame = () => {
         <p>Dinero: {money}</p>
         <p>Conocimiento: {knowledge}</p>
       </div>
-      
+  
       {!gameOver ? (
         neutralEvent ? (
           <div className="neutral-event">
@@ -788,6 +795,5 @@ const StudentSurvivalGame = () => {
       )}
     </div>
   );
-};
-
-export default StudentSurvivalGame;
+}
+  export default StudentSurvivalGame;

@@ -7,7 +7,7 @@ import imagen6 from '../ImagenJuego/DetectivePensando3.jpeg'; // Imagen de pensa
 import "./Juego1.css";
 import Navbar from '../Navbar/Navbar';
 
-const DetectiveGame = ({ onGoToMainMenu }) => { // Recibe una función para ir al menú principal
+const DetectiveGame3 = ({ onGoToMainMenu }) => { // Recibe una función para ir al menú principal
   const [selectedAlternative, setSelectedAlternative] = useState("");
   const [userInput, setUserInput] = useState("");
   const [userCauses, setUserCauses] = useState([]); // Almacenar las causas ingresadas
@@ -257,4 +257,4 @@ const DetectiveGame = ({ onGoToMainMenu }) => { // Recibe una función para ir a
   );
 };
 
-export default DetectiveGame;
+export default DetectiveGame3;

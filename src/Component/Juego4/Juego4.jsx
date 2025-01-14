@@ -719,6 +719,7 @@ const handleNextDay = () => {
     if (week > 4) {
       setGameOver(true);
       setMessage("¡Felicidades! 🎉 Sobreviviste las 4 semanas como estudiante. ¡Eres increíble! 💪");
+      setMessage("GANADOR 🎉🎉🎉 PSR 2025 💪");
       setCurrentImage(imagen2); // Estudiante atento
       return;
     }
@@ -731,10 +732,10 @@ const handleNextDay = () => {
       setDay(1);
   
       // Mensaje de ánimo al completar una semana
-      if (week < 4) {
+      if (week <= 4) {
         setMessage(`¡Has completado la semana ${week}! 🎉 ¡Sigue así, vas por buen camino! 💪`);
       } else {
-        setMessage("¡Última semana completada! 🎉 ¡Estás a punto de ganar! 💪");
+        setMessage("¡Felicidades! 🎉 Sobreviviste las 4 semanas como estudiante. ¡Eres increíble! 💪");
       }
       return;
     }
@@ -764,6 +765,7 @@ const handleNextDay = () => {
       <header className="header">
         <Navbar />
       </header>
+      
       <h1>Supervivencia Estudiantil</h1>
       <img src={currentImage} alt="Estado del estudiante" style={{ width: '200px', height: '200px' }} />
       <p>{message}</p>
